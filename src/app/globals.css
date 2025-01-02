@@ -3,19 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #1B1833;
+  --secondary: #FFF8E6;
+  --tertiary: #D39D55;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --primary: #8D0B41;
+  --secondary: #FFF8E6;
+  --tertiary: #D39D55;
+  }
+}
+
+
+:root.light {
+  --primary: #1B1833;
+  --secondary: #FFF8E6;
+  --tertiary: #8D0B41;
+}
+
+:root.dark {
+  --primary: #FFF8E6;
+  --secondary: #1B1833;
+  --tertiary: #8D0B41;
+  
+ 
+  .header{
+    @apply bg-headerDark/80 backdrop-blur-sm; 
+    animation: scroll linear;
+    animation-timeline: scroll();
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+  @apply flex gap-2 items-center justify-center;
+}
+
+@keyframes scroll {
+  to{ background-color: var(--secondary);}
+}
+.header{
+  @apply bg-header/20 backdrop-blur-sm; 
+  animation: scroll linear;
+  animation-timeline: scroll();
+}
+
+.typing {
+  @apply animate-typingMultiline;
+  animation-timeline: view();
+}
+
+.trans-ei{
+  @apply transition-all ease-in duration-300 
+}
+.trans-linear {
+  @apply transition-all ease-linear duration-300
+}
+
+.trans-eo {
+  @apply transition-all ease-out duration-300
+}
+
+.trans-eio {
+  @apply transition-all ease-in-out duration-300 
+}
+
+.trans-ei-slow{
+  @apply transition-all ease-in duration-1000 
+}
+.trans-linear-slow {
+  @apply transition-all ease-linear duration-1000
+}
+
+.trans-eo-slow {
+  @apply transition-all ease-out duration-1000
+}
+
+.trans-eio-slow {
+  @apply transition-all ease-in-out duration-1000 
 }
