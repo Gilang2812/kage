@@ -7,7 +7,7 @@ import { SosMedAccount } from "../common/SosMedAccount";
 
 const Welcome = () => {
   return (
-    <TopPageSection bgUrl="/images/KG05.png">
+    <TopPageSection bgUrl="/images/KG01.png">
       <section className="space-y-4 shrink basis-96">
         <H2 classList="animate-[slideInReverse_1s_1s_linear_forwards] ">
           Koto Gadang
